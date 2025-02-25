@@ -1,0 +1,48 @@
+
+// Bank Acc Simul.
+class Bank{
+    String accountNumber;
+    String accountHolderName;
+    double balanceAmount;
+
+
+    public Bank( String accountNumber,String accountHolderName,double balanceAmount)
+{
+this.accountNumber=accountNumber;
+this.accountHolderName=accountHolderName;
+this.balanceAmount=balanceAmount;
+}
+ public void deposit(double amount){
+    if( amount>0){
+        balanceAmount+=amount;
+        System.out.println(" deposited amount :"+amount+"/-");
+    }
+    else{
+        System.out.println("Invalid deposite amount ");
+    }
+ }
+ public void withdraw(double amount){
+    if (amount>0 && amount<=balanceAmount){
+        balanceAmount-=amount;
+        System.out.println(" Amount Withdrawn :"+amount+"/-");
+    }
+    else {
+        System.out.println("Invalid amount");
+    }
+ }
+ public void display(){
+    System.out.println( " Account number : "+accountNumber);
+    System.out.println(" Account Holder's Name : "+accountHolderName);
+    System.out.println(" Total Balance : "+ balanceAmount);
+ }
+  public static void main(String[]args){
+    Bank account=new Bank(" 94233926101"," Ridha Rasal",6000.543);
+    account.display();
+    account.deposit( 700543);
+    account.withdraw(45789);
+    account.withdraw(300);
+    account.deposit(10);
+  }
+
+
+}
