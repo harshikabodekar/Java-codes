@@ -1,0 +1,50 @@
+//student management sys.
+class Student { // class declare
+    int id;  // for details 
+    String name;
+    int marks;
+
+    public Student(int id, String name, int marks) {
+        this.id = id;
+        this.name = name;
+        this.marks = marks;
+    }
+
+    // creating method
+    public void displayDetails() {
+        System.out.println("Student ID: " + id);
+        System.out.println("Student Name: " + name);
+        System.out.println("Student Marks: " + marks);
+        System.out.println("Grade Obtained by Student: " + calculateGrade());
+    }
+
+    public String calculateGrade() {
+        if (marks >= 90) {
+            return "A";
+        } else if (marks >= 80) {
+            return "B";
+        } else if (marks >= 70) {
+            return "C";
+        } else if (marks >= 60) {
+            return "D";
+        } else {
+            return "F";
+        }
+    }
+
+    public static void main(String[] args) {
+        Student[] students = {
+            new Student (1,"Rida",95),
+            new Student(2," Alaya",83),
+            new Student( 3," Evara",74),
+            new Student( 4,"Ridhant",54),
+            new Student(5," Veda ",68),
+            new Student( 6," Ayush",35)
+        };
+
+        for (Student student : students) {
+            student.displayDetails();
+            System.out.println("--------------------");
+        }
+    }
+}
