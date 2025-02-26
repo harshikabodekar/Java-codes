@@ -1,0 +1,30 @@
+class Product{
+    public static int productCount=0;
+    String name ;
+    double price;
+
+    public Product( String name,double price){
+        this.name=name;
+        this.price=price;
+        productCount++;
+    }
+     public static void count(){
+        System.out.println(" total no of products are : "+productCount);// static 
+     }
+     public void display(){
+        System.out.println(" Product name : "+ name);
+        System.out.println(" Product Price :"+price);
+        System.out.println("-------------------------------");
+     }
+     public static void main(String[]args){
+    Product pro1=new Product( "Laptop",80000.45);
+    Product pro2=new Product( "Smartphone ",30000.38);
+    Product pro3= new Product("T.V",1290000.78);
+// create obj 
+    pro1.display();
+    pro2.display();
+    pro3.display();
+
+    Product.count();// no obj because static is used for count 
+     }
+}
