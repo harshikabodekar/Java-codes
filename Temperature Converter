@@ -1,0 +1,20 @@
+public class Temperature {
+    // Static method for Celsius to Fahrenheit
+    public static double c_f(double celcious) {
+        return (celcious * 9 / 5) + 32;
+    }
+
+    // Static method for Fahrenheit to Celsius
+    public static double f_c(double fahren) {
+        return (fahren - 32) * 5 / 9;
+    }
+
+    // Main method
+    public static void main(String[] args) {
+        double celcious = 25.5;
+        double fahern = 97.35;
+
+        System.out.println(celcious + " Celsius in Fahrenheit is " + Temperature.c_f(celcious) + " Fahrenheit.");
+        System.out.println(fahern + " Fahrenheit in Celsius is " + Temperature.f_c(fahern) + " Celsius.");
+    }
+}
