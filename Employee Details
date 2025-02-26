@@ -1,0 +1,30 @@
+class Employee{
+    int id;
+    String name;
+    double salary;
+// parameterized constructor
+    public Employee( int id, String name, double salary){
+        this.id=id;
+        this.name=name;
+        this.salary=salary;
+    }
+//creating method
+  public void display(){
+    System.out.println(" Employee id : "+id);
+    System.out.println(" Employee Name : "+name);
+    System.out.println(" Employee salary: "+salary);
+  }
+  //main block 
+  public static void main(String[]args)
+  {
+    Employee[] employee={
+        new Employee( 101," Rida",800000),
+        new Employee(102," Mira",750000),
+        new Employee(103," Rhidhant",970000)
+    };
+    for(Employee emp: employee){
+        emp.display();
+        System.out.println("---------------------------------");
+    }
+  }
+}
