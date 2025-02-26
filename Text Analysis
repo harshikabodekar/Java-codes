@@ -1,0 +1,53 @@
+public class TextAnalysis {
+
+    // Method to count the number of words in a paragraph
+    public static int countWords(String paragraph) {
+        String[] words = paragraph.split("\\s+");
+        return words.length;
+    }
+
+    // Method to find and replace a specific word in a paragraph
+    public static String findAndReplace(String paragraph, String oldWord, String newWord) {
+        return paragraph.replaceAll("\\b" + oldWord + "\\b", newWord);
+    }
+
+    // Method to extract the first sentence from a paragraph
+    public static String extractFirstSentence(String paragraph) {
+        int endIndex = paragraph.indexOf('.');
+        if (endIndex != -1) {
+            return paragraph.substring(0, endIndex + 1);
+        }
+        return paragraph;
+    }
+
+    public static void main(String[] args) {
+        String paragraph = "The University is PCU. The students in it are useless";
+        System.out.println(paragraph);
+        System.out.println("-------------------------------------------------");
+
+        // Count the number of words
+        int wordCount = countWords(paragraph);
+        System.out.println("Number of words: " + wordCount);
+         System.out.println("-------------------------------------------------");
+
+        // Find and replace a specific word
+        String replacedParagraph = findAndReplace(paragraph, "useless", " okay");
+        System.out.println("Paragraph after replacement: " + replacedParagraph);
+         System.out.println("-------------------------------------------------");
+
+        // Extract the first sentence
+        String firstSentence = extractFirstSentence(paragraph);
+        System.out.println("First sentence: " + firstSentence);
+         System.out.println("-------------------------------------------------");
+
+        // Convert the text to upper case
+        String upperCaseParagraph = paragraph.toUpperCase();
+        System.out.println("Paragraph in upper case: " + upperCaseParagraph);
+         System.out.println("-------------------------------------------------");
+
+        // Convert the text to lower case
+        String lowerCaseParagraph = paragraph.toLowerCase();
+        System.out.println("Paragraph in lower case: " + lowerCaseParagraph);
+         System.out.println("-------------------------------------------------");
+    }
+}
