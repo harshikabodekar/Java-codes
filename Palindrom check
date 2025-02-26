@@ -1,0 +1,24 @@
+public class PalindromeCheck {
+
+    // Method to check if a given string is a palindrome
+    public static boolean isPalindrome(String str) {
+        // Remove spaces and convert to lowercase
+        str = str.replaceAll("\\s+", "").toLowerCase();
+
+        // Use StringBuilder to reverse the string
+        StringBuilder reversedStr = new StringBuilder(str).reverse();
+
+        // Compare the original string with the reversed string
+        return str.equals(reversedStr.toString());
+    }
+
+    public static void main(String[] args) {
+        String str = "Java Assignment"; 
+
+        if (isPalindrome(str)) {
+            System.out.println("\"" + str + "\" is a palindrome.");
+        } else {
+            System.out.println("\"" + str + "\" is not a palindrome.");
+        }
+    }
+}
