@@ -1,0 +1,19 @@
+public class SumOfDigits {
+
+    // Recursive method to calculate the sum of digits of a given number
+    public static int sumOfDigits(int number) {
+        if (number == 0) {
+            return 0;
+        }
+        return (number % 10) + sumOfDigits(number / 10);
+        //the modulus operator (%) gives us the remainder 
+        /*num % 10 gives the last digit.
+          num / 10 removes the last digit */
+    }
+
+    public static void main(String[] args) {
+        int number = 12345; // Example: Calculate the sum of digits of 12345
+        int result = sumOfDigits(number);
+        System.out.println("The sum of digits of " + number + " is: " + result);
+    }
+}
