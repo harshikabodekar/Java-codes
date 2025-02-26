@@ -1,0 +1,29 @@
+class Book{
+    String title;
+    String authorName;
+    double price;
+    //default constructor
+    public Book(){
+        this.title=" Dear Stranger I know how you feel";
+        this.authorName=" Ashish Bagrecha";
+        this.price=350.50;
+    }
+//Parameterized  constructor
+    public Book( String title,String authorName,double price)
+    {
+        this.title=title;
+        this.authorName=authorName;
+        this.price=price;
+    }
+    // method to display
+    public void display(){
+        System.out.println(" title of the book : "+title);
+        System.out.println(" Author of the book : "+authorName);
+        System.out.println(" Price of the book : "+price);
+    }
+     public static void main( String[]args){
+        Book book =new Book();
+        book.display();
+     }
+
+}
