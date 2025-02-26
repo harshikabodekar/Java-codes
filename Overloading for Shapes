@@ -1,0 +1,48 @@
+class Shape{
+    double radius;
+    double length;
+    double breadth;
+    String ShapeType;
+// default
+    public Shape(){ // overloading because Shape :default constructor
+        this.radius=21.5;
+        this.ShapeType="Circle";
+    }
+    //constructor
+    public Shape( double length, double breadth){// Shape :parameterized constructor
+        this.length=length;
+        this.breadth=breadth;
+        this.ShapeType="Rectangle";
+    }
+    // method for calculating area
+    public double calculateArea(){// double because you need return value 
+        if(ShapeType.equals("Circle")){
+            return 3.14*radius*radius;
+        }
+        else if ( ShapeType.equals("Rectangle")){
+            return length*breadth;
+        }
+        return 0;
+    }
+    public  void display(){
+        if (ShapeType.equals("Circle")){
+            System.out.println("Shape : Circle ");
+            System.out.println("Radius: "+radius);
+            System.out.println("Area of circle :"+calculateArea());
+            System.out.println("------------------------------");
+        }
+        else if(ShapeType.equals("Rectangle")){
+            System.out.println(" Shape : Rectangle");
+            System.out.println(" Length :"+length);
+            System.out.println("Breadth: "+breadth);
+            System.out.println("Area of Rectangle : "+calculateArea());
+             System.out.println("------------------------------");
+        }
+    }
+    public static void main (String[]args){
+        Shape circle=new Shape();
+        circle.display();
+        Shape rect=new Shape(12.78,9.54);
+        rect.display();
+    }
+}
