@@ -1,0 +1,43 @@
+public class Resource {
+    private String name;
+
+    // Constructor
+    public Resource(String name) {
+        this.name = name;
+    }
+
+    // Override finalize method to display a message when an object is garbage collected
+    @Override
+    protected void finalize() throws Throwable {
+        try {
+            System.out.println("Resource " + name + " is being garbage collected.");
+        } finally {
+            super.finalize();
+        }
+    }
+
+    public static void main(String[] args) {
+        // Create resource objects
+        Resource res1 = new Resource("Resource1");
+        Resource res2 = new Resource("Resource2");
+
+        // Display a message indicating that the objects are created
+        System.out.println("Resource objects created.");
+
+        // Nullify the references to make the objects eligible for garbage collection
+        res1 = null;
+        res2 = null;
+
+        // Suggest the JVM to run the garbage collector
+        System.gc();
+
+        // Wait for a short period to give the garbage collector time to run
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("End of main method.");
+    }
+}
