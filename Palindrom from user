@@ -1,0 +1,17 @@
+import java.util.Scanner;
+public class Palindrome{
+    public static void main(String[]args){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a word: ");
+        String n=sc.nextLine();
+        String cleaned=n.toLowerCase().replaceAll("[^a-z0-9]","");
+        String reversed=new StringBuilder(cleaned).reverse().toString();
+        if(cleaned.equals(reversed)){
+            System.out.println(n+ " is Palindrome");
+        }
+        else{
+            System.out.println(n+ " is not Palindrome");
+        }
+        sc.close();
+    }
+}
